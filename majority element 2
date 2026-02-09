@@ -1,0 +1,11 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        n= len(nums)
+        majority=[]
+        freq= {}
+        for i in nums:
+            freq[i]= freq.get(i, 0) +1
+            if freq[i]>n//3 and i not in majority:
+                majority.append(i)
+        return majority
+            
