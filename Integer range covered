@@ -1,0 +1,15 @@
+class Solution(object):
+    def isCovered(self, ranges, left, right):
+        seen=[]
+        for i in range(left, right+1):
+            checked= False
+            for l, r in ranges:
+                if l<= i<=r:
+                    checked= True
+                    break
+            if not checked:
+                return False
+
+        return True
+
+        
