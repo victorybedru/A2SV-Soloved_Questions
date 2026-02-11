@@ -1,0 +1,9 @@
+class Solution:
+    def minSteps(self, s: str, t: str) -> int:
+        countS= Counter(s)
+        countT= Counter(t)
+        step=0
+        for i in countS:
+            if countS[i] >countT.get(i,0):
+                step+= countS[i]-countT.get(i,0)
+        return step
