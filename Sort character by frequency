@@ -1,0 +1,12 @@
+class Solution(object):
+    def frequencySort(self, s):
+        freq= {}
+        for ch in s:
+            freq[ch]= freq.get(ch, 0)+1
+        sortedFreq= sorted(freq, key= lambda ch: freq[ch], reverse= True)
+        ans=""
+        for ch in sortedFreq:
+            ans+= ch*freq[ch]
+        return ans
+
+        
