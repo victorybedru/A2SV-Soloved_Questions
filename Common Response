@@ -1,0 +1,21 @@
+class Solution(object):
+    def findCommonResponse(self, responses):
+        count={}
+        for response in responses:
+            unique= set(response)
+            for word in unique:
+                count[word]= count.get(word, 0)+1
+        max_freq=0
+        common=""
+        for word in count:
+            if count[word]>max_freq:
+                max_freq=count[word]
+                common=word
+            elif count[word]==max_freq:
+                common= min(common, word)
+        return common
+
+
+        
+
+            
