@@ -1,0 +1,15 @@
+class Solution(object):
+    def closeStrings(self, word1, word2):
+        if len(word1) != len(word2):
+            return False
+        freq1={}
+        freq2={}
+        for i in word1:
+            freq1[i]= freq1.get(i,0)+1
+        for i in word2:
+            freq2[i]= freq2.get(i,0)+1
+        if set(freq1.keys())==set(freq2.keys()) and sorted(freq1.values())==sorted(freq2.values()):
+            return True
+        return False
+        
+        
