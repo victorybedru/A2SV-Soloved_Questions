@@ -1,0 +1,10 @@
+class Solution(object):
+    def countCharacters(self, words, chars):
+        charCount= Counter(chars)
+        res=0
+        for word in words:
+            wordCount= Counter(word)
+            canForm= all(wordCount[ch]<= charCount.get(ch,0) for ch in wordCount)
+            if canForm:
+                res+= len(word)
+        return res
