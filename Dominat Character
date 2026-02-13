@@ -1,0 +1,17 @@
+t= int(input())
+for i in range(t):
+    n =int(input())
+    s= input()
+    ans= float('inf')
+    for i in range(n):
+        # for length 2
+        if i+1<n and s[i:i+2]== "aa":
+            ans= 2
+        if i+2<n and s[i: i+3] in ("aba","aca"):
+            ans= min(ans,3)
+        if i+3<n and s[i: i+4] in ("abca","acba"):
+            ans= min(ans,4)
+        if i+6<n and s[i: i+7] in ("abbacca", "accabba"):
+            ans= min(ans, 7)
+    print(ans if ans!= float('inf') else -1)
+
