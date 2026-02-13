@@ -1,0 +1,18 @@
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        sList= s.split()
+        if len(sList) != len(pattern):
+            return False
+        PS={}
+        SP={}
+        for pa, st in zip(sList, pattern):
+            if pa in PS and PS[pa]!=st:
+                return False
+            if st in SP and SP[st]!= pa:
+                return False
+            PS[pa]= st
+            SP[st]=pa
+        return True
+
+
+        
