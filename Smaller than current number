@@ -1,0 +1,12 @@
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+        sortedNum= sorted(nums)
+        count={}
+        for ind, val in enumerate(sortedNum):
+            if val not in count:
+                count[val]= ind
+        return [count[i] for i in nums]
+
+
+
+
