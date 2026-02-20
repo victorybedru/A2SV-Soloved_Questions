@@ -1,0 +1,9 @@
+n= int(input())
+a= list(map(int, input().split()))
+a.sort()
+streak=1
+for i in a:
+    if i >= streak:
+        streak+=1
+print(streak-1)
+    
