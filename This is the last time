@@ -1,0 +1,16 @@
+t = int(input())
+for _ in range(t):
+    n, k = map(int, input().split())
+    casinos = [tuple(map(int, input().split())) for _ in range(n)]
+    casinos.sort()
+    changed = True
+    while changed:
+        changed = False
+        for i in range(len(casinos)):
+            l, r, real = casinos[i]
+            if l <= k <= r:
+                if real > k:
+                    k = real
+                casinos[i] = (-1, -1, -1)  # mark as used
+                changed = True
+    print(k)
