@@ -1,0 +1,14 @@
+class Solution:
+    def partitionLabels(self, s: str) -> List[int]:
+        occurence={val:ind for ind, val in enumerate(s)}
+        res=[]
+        start=0
+        last=0
+        for ind, val in enumerate(s):
+            last= max(last,occurence[val])
+            if ind==last:
+                res.append(last-start+1)
+                start= ind+1
+        return res
+        
+
