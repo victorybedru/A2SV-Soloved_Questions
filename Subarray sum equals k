@@ -1,0 +1,13 @@
+class Solution:
+    def subarraySum(self, nums: List[int], k: int) -> int:
+        hashmap={0:1}
+        count=0
+        summation=0
+        for num in nums:
+            summation+= num
+            if summation-k in hashmap:
+                count+= hashmap[summation-k]
+            hashmap[summation]= hashmap.get(summation,0)+1
+
+        return count
+
