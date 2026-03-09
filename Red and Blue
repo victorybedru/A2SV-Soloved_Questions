@@ -1,0 +1,17 @@
+t= int(input())
+for _ in range(t):
+    n= int(input())
+    r= list(map(int, input().split()))
+    m= int(input())
+    b= list(map(int, input().split()))
+    maxR=0
+    maxB=0
+    currSum=0
+    for i in range(n):
+        currSum+=r[i]
+        maxR= max(maxR,currSum)
+    currSum=0
+    for i in range(m):
+        currSum+=b[i]
+        maxB= max(maxB,currSum)
+    print(maxR+maxB)
