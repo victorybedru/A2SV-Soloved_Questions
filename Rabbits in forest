@@ -1,0 +1,11 @@
+class Solution:
+    def numRabbits(self, answers: List[int]) -> int:
+        count= Counter(answers)
+        rabbits=0
+        for key, val in count.items():
+            sz= key+1
+            grps= math.ceil(val/sz)
+            rabbits+= sz* grps
+        return rabbits
+        
+
