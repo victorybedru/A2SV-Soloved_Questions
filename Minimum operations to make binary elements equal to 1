@@ -1,0 +1,16 @@
+class Solution:
+    def minOperations(self, nums: List[int]) -> int:
+        def flip(num,i):
+            num[i]=0 if num[i] else 1
+        op=0
+        for i in range(len(nums)-2):
+            if nums[i]==0:
+                flip(nums,i)
+                flip(nums,i+1)
+                flip(nums,i+2)
+                op+=1
+        if not nums[-1] or not nums[-2]:
+            return -1
+        else:
+            return op
+
