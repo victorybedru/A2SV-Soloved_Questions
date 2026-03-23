@@ -2,7 +2,7 @@
 
 **Difficulty:** Easy
 
-**Problem:** [Same-Tree](https://leetcode.com/problems/same-tree/submissions/1956561182/)
+**Problem:** [Same-Tree](https://leetcode.com/problems/same-tree/)
 
 ---
 
